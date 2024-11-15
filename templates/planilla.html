@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VER PLANILLAS</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <h1>Bienvenido, {{ current_user.nombre }}!</h1>
+    <h2>¿Qué deseas realizar hoy?</h2>
+    <ol>
+        <li><a href="/vinosproceso">VER VINOS EN PROCESO</a></li>
+        <li><a href="/planilla">CREAR PLANILLAS</a></li>    
+    </ol>
+
+    <h3>PLANILLAS CARGADAS:</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tipo de vino</th>
+                <th>Sector proveniente</th>
+                <th>ID</th>
+                <th>Vigencia</th>
+                <th>Revisión</th>
+                <th>Fecha</th>
+                <th>Laboratorio</th>
+                <th>Vino Mosto</th>
+                <th>Código</th>
+                <th>Densidad</th>
+                <th>Ext. Densidad</th>
+                <th>BX</th>
+                <th>Alc. Alcolyzer</th>
+                <th>Alc. Destilación</th>
+                <th>Azúcar Qco</th>
+                <th>Foss</th>
+                <th>SO2 Lts</th>
+                <th>SO2 Real</th>
+                <th>SO2 Rankine</th>
+                <th>At. Titulable</th>
+                <th>Av. Destilación</th>
+                <th>Color Espectro</th>
+                <th>Oxígeno</th>
+                <th>CO2</th>
+                <th>RCIH</th>
+                <th>R. Prot. Calor</th>
+                <th>Hierro</th>
+                <th>Cobre</th>
+                <th>Potasio</th>
+                <th>Sorbato</th>
+                <th>Pureza Varietal</th>
+                <th>Mat. Col. Art.</th>
+                <th>Calcio</th>
+                <th>Cloruros</th>
+                <th>Sulfatos</th>
+                <th>Ferro</th>
+                <th>Check Stab</th>
+                <th>Filtrabilidad</th>
+                <th>Prueba Frío</th>
+                <th>NPA</th>
+                <th>Polif. Totales</th>
+                <th>RTO Viabilidad</th>
+                <th>NTU</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for planilla in planillas %}
+            <tr>
+                <td>{{ planilla.tipodevino }}</td>
+                <td>{{ planilla.sectorproveniente }}</td>
+                <td>{{ planilla.rcqln }}</td>
+                <td>{{ planilla.vigencia }}</td>
+                <td>{{ planilla.revision }}</td>
+                <td>{{ planilla.fecha }}</td>
+                <td>{{ planilla.laboratorio }}</td>
+                <td>{{ planilla.vinoMosto }}</td>
+                <td>{{ planilla.codigo }}</td>
+                <td>{{ planilla.densidad }}</td>
+                <td>{{ planilla.extDensidad }}</td>
+                <td>{{ planilla.bx }}</td>
+                <td>{{ planilla.alcAlcolyzer }}</td>
+                <td>{{ planilla.alcDestilacion }}</td>
+                <td>{{ planilla.azucarQco }}</td>
+                <td>{{ planilla.foss }}</td>
+                <td>{{ planilla.so2Lts }}</td>
+                <td>{{ planilla.so2Real }}</td>
+                <td>{{ planilla.so2Rankine }}</td>
+                <td>{{ planilla.atTitulable }}</td>
+                <td>{{ planilla.avDestilacion }}</td>
+                <td>{{ planilla.colorEspectro }}</td>
+                <td>{{ planilla.oxigeno }}</td>
+                <td>{{ planilla.co2 }}</td>
+                <td>{{ planilla.rcih }}</td>
+                <td>{{ planilla.rProtCalor }}</td>
+                <td>{{ planilla.hierro }}</td>
+                <td>{{ planilla.cobre }}</td>
+                <td>{{ planilla.potasio }}</td>
+                <td>{{ planilla.sorbato }}</td>
+                <td>{{ planilla.purezaVarietal }}</td>
+                <td>{{ planilla.matColArt }}</td>
+                <td>{{ planilla.calcio }}</td>
+                <td>{{ planilla.cloruros }}</td>
+                <td>{{ planilla.sulfatos }}</td>
+                <td>{{ planilla.ferro }}</td>
+                <td>{{ planilla.checkStab }}</td>
+                <td>{{ planilla.filtrabilidad }}</td>
+                <td>{{ planilla.pruebaFrio }}</td>
+                <td>{{ planilla.npa }}</td>
+                <td>{{ planilla.polifTotales }}</td>
+                <td>{{ planilla.rtoViabilidad }}</td>
+                <td>{{ planilla.ntu }}</td>
+                <td><a href="/editar/{{ planilla.rcqln }}">Editar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+</body>
+</html>

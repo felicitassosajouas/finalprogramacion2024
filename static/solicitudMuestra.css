@@ -1,0 +1,44 @@
+label{
+    font-size: 25px;
+    font-weight: 500;
+}
+label:hover{
+    background-color: rgba(134, 99, 55, 0.74);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    border-left: #eec9a5;
+    border-left: solid;
+    font-weight: 700;
+}
+
+input{
+    background-color: #e3c5a89f;
+}
+input:hover{
+    background-color: #e3c3a8cb;
+}
+
+/* Estilo para el botón */
+.toggle-btn {
+    background-color: #ac9177;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.toggle-btn:hover {
+    border-radius: 5px;
+    background-color: #06101bda;
+    color: #f9e8e8;
+    font-weight: 600;
+    font-size: 20px;
+}

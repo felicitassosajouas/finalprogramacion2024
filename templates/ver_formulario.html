@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Formulario - Enólogo</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/form.css">
+</head>
+<body>
+    <h1>DATOS QUE ENVÍA EL SECTOR LABORATORIO</h1>
+
+    {% if datos_formulario %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tipo de Vino</th>
+                <th>ID</th>
+                <th>RCQLN</th>
+                <th>Vigencia</th>
+                <th>Revisión</th>
+                <th>Fecha</th>
+                <th>Laboratorio</th>
+                <th>Vino/Mosto</th>
+                <th>Código</th>
+                <th>Densidad</th>
+                <th>Ext. Densidad</th>
+                <th>BX</th>
+                <th>Alc. Alcolyzer</th>
+                <th>Alc. Destilación</th>
+                <th>Azúcar Qco</th>
+                <th>Foss</th>
+                <th>SO2 Lts</th>
+                <th>SO2 Real</th>
+                <th>SO2 Rankine</th>
+                <th>At. Titulable</th>
+                <th>Av. Destilación</th>
+                <th>Color Espectro</th>
+                <th>Oxígeno</th>
+                <th>CO2</th>
+                <th>RCIH</th>
+                <th>R. Prot. Calor</th>
+                <th>Hierro</th>
+                <th>Cobre</th>
+                <th>Potasio</th>
+                <th>Sorbato</th>
+                <th>Pureza Varietal</th>
+                <th>Mat. Col. Art.</th>
+                <th>Calcio</th>
+                <th>Cloruros</th>
+                <th>Sulfatos</th>
+                <th>Ferro</th>
+                <th>Check Stab</th>
+                <th>Filtrabilidad</th>
+                <th>Prueba Frío</th>
+                <th>NPA</th>
+                <th>Polif. Totales</th>
+                <th>RTO Viabilidad</th>
+                <th>NTU</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dato in datos_formulario %}
+            <tr>
+                <td>{{ dato[0] }}</td>
+                <td>{{ dato[1] }}</td>
+                <td>{{ dato[2] }}</td>
+                <td>{{ dato[3] }}</td>
+                <td>{{ dato[4] }}</td>
+                <td>{{ dato[5] }}</td>
+                <td>{{ dato[6] }}</td>
+                <td>{{ dato[7] }}</td>
+                <td>{{ dato[8] }}</td>
+                <td>{{ dato[9] }}</td>
+                <td>{{ dato[10] }}</td>
+                <td>{{ dato[11] }}</td>
+                <td>{{ dato[12] }}</td>
+                <td>{{ dato[13] }}</td>
+                <td>{{ dato[14] }}</td>
+                <td>{{ dato[15] }}</td>
+                <td>{{ dato[16] }}</td>
+                <td>{{ dato[17] }}</td>
+                <td>{{ dato[18] }}</td>
+                <td>{{ dato[19] }}</td>
+                <td>{{ dato[20] }}</td>
+                <td>{{ dato[21] }}</td>
+                <td>{{ dato[22] }}</td>
+                <td>{{ dato[23] }}</td>
+                <td>{{ dato[24] }}</td>
+                <td>{{ dato[25] }}</td>
+                <td>{{ dato[26] }}</td>
+                <td>{{ dato[27] }}</td>
+                <td>{{ dato[28] }}</td>
+                <td>{{ dato[29] }}</td>
+                <td>{{ dato[30] }}</td>
+                <td>{{ dato[31] }}</td>
+                <td>{{ dato[32] }}</td>
+                <td>{{ dato[33] }}</td>
+                <td>{{ dato[34] }}</td>
+                <td>{{ dato[35] }}</td>
+                <td>{{ dato[36] }}</td>
+                <td>{{ dato[37] }}</td>
+                <td>{{ dato[38] }}</td>
+                <td>{{ dato[39] }}</td>
+                <td>{{ dato[40] }}</td>
+                <td>{{ dato[41] }}</td>
+                <td>{{ dato[42] }}</td>
+                <td>
+
+                    <a href="{{ url_for('ver_detalle', id=dato[2]) }}">Ver Detalles</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <a href="/enologo">Volver</a>
+    </div>
+    {% else %}
+        <p>No hay datos disponibles.</p>
+    {% endif %}
+</body>
+</html>
